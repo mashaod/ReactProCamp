@@ -1,8 +1,9 @@
 import React from 'react';
+import Header from './components/header';
 
 function App() {
   return (
-    <h1> Premier League </h1>
+    <Header />
   )
 }
 
