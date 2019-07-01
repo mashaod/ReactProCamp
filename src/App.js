@@ -1,14 +1,20 @@
 import React from 'react';
-import Header from './components/header';
+import { Router, Switch, Route } from 'react-router-dom'
+import history from './history';
 
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import theme from "./theme";
+import Header from './components/header';
+import { HomePage, NotFoundPage } from './pages';
+
 
 function App() {
   return (
-    <MuiThemeProvider theme={theme}>
+    <Router history={history}>
       <Header />
-    </MuiThemeProvider>
+      <Switch>
+        <Route path='/' exact component={HomePage}></Route>
+        <Route component={NotFoundPage}></Route>
+      </Switch>
+    </Router>
   )
 }
 

@@ -1,0 +1,57 @@
+import React, { Component } from 'react';
+import ErrorIndicator from '../errorIndicator';
+import PreloaderCircular from '../preloaderCircular';
+import { withAppService } from '../../hoc';
+import TeamsByRowGroups from './components/TeamsByRowGroups';
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import Paper from '@material-ui/core/Paper';
+
+class CommandList extends Component {
+ _isMounted = false;
+
+  state = {
+    teams: [],
+    loading: true,
+    error: false
+  };
+
+  componentDidMount() {
+    this._isMounted = true;
+
+    this.props.appService.getTeams()
+      .then(({ teams }) => {
+        setTimeout(() => {
+          this.setState({
+            teams,
+            loading: false
+          })
+        }, 0)
+      })
+      .catch((err) => this.setState({ error: true }))
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  render() {
+    const { teams, loading, error } = this.state;
+
+    if (loading) { return <PreloaderCircular />; }
+    if (error) { return <ErrorIndicator />; }
+
+    return (
+      <Paper>
+        <Table>
+          <TableBody>
+            <TeamsByRowGroups teams={teams} count="4" />
+          </TableBody>
+        </Table>
+      </Paper>
+    )
+  }
+}
+
+export default withAppService(CommandList);
