@@ -8,7 +8,7 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import Paper from '@material-ui/core/Paper';
 
-class CommandList extends Component {
+class TeamList extends Component {
  _isMounted = false;
 
   state = {
@@ -55,4 +55,4 @@ class CommandList extends Component {
   }
 }
 
-export default withAppService(CommandList);
+export default withAppService(TeamList);

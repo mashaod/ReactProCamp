@@ -1,7 +1,7 @@
-import HomePage from './HomePage';
+import TeamsPage from './TeamPage';
 import NotFoundPage from './NotFoundPage';
 
 export {
-  HomePage,
+  TeamsPage,
   NotFoundPage
 };

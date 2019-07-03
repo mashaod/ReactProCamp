@@ -3,7 +3,7 @@ import { Router, Redirect, Switch, Route } from 'react-router-dom'
 import history from './history';
 
 import Header from './components/header';
-import { HomePage, NotFoundPage } from './pages';
+import { TeamsPage, NotFoundPage } from './pages';
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Redirect from="/fixtures" exact to="/teams" />
         <Redirect from="/odds" exact to="/teams" />
         
-        <Route path='/teams' exact component={HomePage}></Route>
+        <Route path='/teams' exact component={TeamsPage}></Route>
         <Route component={NotFoundPage}></Route>
       </Switch>
     </Router>
