@@ -22,14 +22,15 @@ class CommandList extends Component {
 
     this.props.appService.getTeams()
       .then(({ teams }) => {
-        setTimeout(() => {
-          this.setState({
-            teams,
-            loading: false
-          })
-        }, 0)
+        this.setState({
+          teams,
+          loading: false
+        })
       })
-      .catch((err) => this.setState({ error: true }))
+      .catch((err) => this.setState({ 
+        error: true, 
+        loading: false 
+      }))
   }
 
   componentWillUnmount() {
