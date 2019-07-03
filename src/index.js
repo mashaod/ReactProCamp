@@ -13,9 +13,9 @@ const appService = new AppService();
 
 ReactDOM.render(
     <MuiThemeProvider theme={theme}>
-      <AppServiceProvider value={appService}>
-        <App />
-      </AppServiceProvider>
+        <AppServiceProvider value={appService}>
+            <App />
+        </AppServiceProvider>
     </MuiThemeProvider>, 
     document.getElementById('root')
-  );
+);

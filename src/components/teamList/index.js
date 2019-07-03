@@ -9,50 +9,50 @@ import TableBody from '@material-ui/core/TableBody';
 import Paper from '@material-ui/core/Paper';
 
 class TeamList extends Component {
- _isMounted = false;
+    _isMounted = false;
 
-  state = {
-    teams: [],
-    loading: true,
-    error: false
-  };
+    state = {
+        teams: [],
+        loading: true,
+        error: false
+    };
 
-  componentDidMount() {
+    componentDidMount() {
     this._isMounted = true;
 
     this.props.appService.getTeams()
-      .then(({ teams }) => {
+        .then(({ teams }) => {
         this.setState({
-          teams,
-          loading: false
+            teams,
+            loading: false
         })
-      })
-      .catch((err) => this.setState({ 
-        error: true, 
-        loading: false 
-      }))
-  }
+        })
+        .catch((err) => this.setState({ 
+            error: true, 
+            loading: false 
+        }))
+    }
 
-  componentWillUnmount() {
+    componentWillUnmount() {
     this._isMounted = false;
-  }
+    }
 
-  render() {
-    const { teams, loading, error } = this.state;
+    render() {
+        const { teams, loading, error } = this.state;
 
-    if (loading) { return <PreloaderCircular />; }
-    if (error) { return <ErrorIndicator />; }
+        if (loading) { return <PreloaderCircular />; }
+        if (error) { return <ErrorIndicator />; }
 
-    return (
-      <Paper>
-        <Table>
-          <TableBody>
-            <TeamsByRowGroups teams={teams} count="4" />
-          </TableBody>
-        </Table>
-      </Paper>
-    )
-  }
+        return (
+            <Paper>
+            <Table>
+                <TableBody>
+                <TeamsByRowGroups teams={teams} count="4" />
+                </TableBody>
+            </Table>
+            </Paper>
+        )
+    }
 }
 
 export default withAppService(TeamList);

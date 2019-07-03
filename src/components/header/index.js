@@ -7,19 +7,19 @@ import { MenuItems, Logo, SearchBar} from './components';
 import useStyles from './styles';
 
 const Header = () => {
-  const classes = useStyles();
+const classes = useStyles();
 
-  return (
+return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <MenuItems />
-          <Logo />
-          <SearchBar />
-        </Toolbar>
-      </AppBar>
+        <AppBar position="static">
+            <Toolbar>
+                <MenuItems />
+                <Logo />
+                <SearchBar />
+            </Toolbar>
+        </AppBar>
     </div>
-  );
+);
 }
 
 export default Header;

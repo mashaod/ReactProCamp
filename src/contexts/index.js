@@ -1,9 +1,9 @@
 import {
-  AppServiceProvider,
-  AppServiceConsumer
+    AppServiceProvider,
+    AppServiceConsumer
 } from './AppServiceContext';
 
 export {
-  AppServiceProvider,
-  AppServiceConsumer
+    AppServiceProvider,
+    AppServiceConsumer
 };
