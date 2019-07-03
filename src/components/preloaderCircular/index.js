@@ -2,7 +2,7 @@ import React from 'react';
 import useStyles from './styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const ErrorIndicator = () => {
+const PreloaderCircular = () => {
     const classes = useStyles();
 
     return (
@@ -15,4 +15,4 @@ const ErrorIndicator = () => {
     )
 };
 
-export default ErrorIndicator;
+export default PreloaderCircular;

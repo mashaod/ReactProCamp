@@ -1,7 +1,7 @@
 import React from 'react';
-import TeamList from '../components/teamList';
+import TeamCard from '../components/teamCard';
 
-const TeamPage = () =>
-		<TeamList />
+const TeamPage = (props) =>
+    <TeamCard { ...props }/>
 
 export default TeamPage;

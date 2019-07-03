@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 import TableCell from '@material-ui/core/TableCell';
@@ -12,15 +13,17 @@ const TeamsByRowGroups = (props) => {
     return (
         teamGroups.map((group) => (
             <TableRow key={'group_' + group[0].team_id}>
-
-            {group.map((team) =>
-                <TableCell key={team.team_id} align="center" component="th" scope="row">
-                    <h2>{ team.name }</h2>
-                    <img src={team.logo} alt="team logo"></img>
-                    <p><i>{ team.venue_city }</i></p>
-                </TableCell>
-            )}
-
+                {
+                    group.map((team) =>
+                        <TableCell key={team.team_id} align="center" component="th" scope="row" >
+                            <Link to={`/teams/${team.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <h2>{ team.name }</h2>
+                                <img src={team.logo} alt="team logo"></img>
+                                <p><i>{ team.venue_city }</i></p>
+                            </Link>
+                        </TableCell>
+                    )
+                }
             </TableRow>
         ))
     )

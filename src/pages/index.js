@@ -1,7 +1,9 @@
-import TeamsPage from './TeamPage';
+import TeamsPage from './TeamsPage';
+import TeamPage from './TeamPage';
 import NotFoundPage from './NotFoundPage';
 
 export {
-  TeamsPage,
-  NotFoundPage
+	TeamsPage,
+	TeamPage,
+	NotFoundPage
 };
