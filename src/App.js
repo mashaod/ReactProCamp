@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Switch, Route } from 'react-router-dom'
+import { Router, Redirect, Switch, Route } from 'react-router-dom'
 import history from './history';
 
 import Header from './components/header';
@@ -11,7 +11,11 @@ function App() {
     <Router history={history}>
       <Header />
       <Switch>
-        <Route path='/' exact component={HomePage}></Route>
+        <Redirect from="/" exact to="/teams" />
+        <Redirect from="/fixtures" exact to="/teams" />
+        <Redirect from="/odds" exact to="/teams" />
+        
+        <Route path='/teams' exact component={HomePage}></Route>
         <Route component={NotFoundPage}></Route>
       </Switch>
     </Router>

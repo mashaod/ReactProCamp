@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
@@ -10,10 +11,10 @@ import logo from '../../assets/logo.png';
 export const MenuItems = () => {
   return (
     <React.Fragment>
-      <Button color="inherit">Home</Button>
-      <Button color="inherit">Teams</Button>
-      <Button color="inherit">Fixtures</Button>
-      <Button color="inherit">Odds</Button>
+      <Button component={Link} to="/" color="inherit">Home</Button>
+      <Button component={Link} to="/teams" color="inherit">Teams</Button>
+      <Button component={Link} to="/fixtures" color="inherit">Fixtures</Button>
+      <Button component={Link} to="/odds" color="inherit">Odds</Button>
     </React.Fragment>
   )
 }
