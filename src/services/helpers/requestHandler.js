@@ -1,12 +1,8 @@
 import API from '../../config/api';
 
-const requestHandler = async ({ emptyData=true, options }) => {
+const requestHandler = async (options) => {
   try {
       const response = await API(options);
-
-      if (emptyData === false && response.data.api.results === 0) {
-        return Promise.reject({ message: 'Nothing found' });
-      }
 
       // Success
       return response.data.api;

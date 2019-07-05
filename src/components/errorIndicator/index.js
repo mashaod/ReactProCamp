@@ -1,13 +1,16 @@
 import React from 'react';
 import useStyles from './styles';
-import Icon from '@material-ui/core/Icon';
+import { Error } from '@material-ui/icons';
 
-const ErrorIndicator = () => {
+const ErrorIndicator = ({ message=null }) => {
     const classes = useStyles();
+
+    const drowErrorIcon = () => (<Error className={classes.icon} color="error" fontSize="large" />)
+    const drowErrorMessage = () => (<h3>{message}</h3>);
 
     return (
         <div className={classes.root} >
-            <Icon className={classes.icon} color="error" fontSize="large">error</Icon>
+            { message ? drowErrorMessage() : drowErrorIcon() }
         </div>
     )
 };

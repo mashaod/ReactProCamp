@@ -25,18 +25,20 @@ class TeamCard extends Component {
     const { teamId } = this.props.match.params;
 
     this.props.appService.getTeamById(teamId)
-      .then(({ teams }) => {
+      .then(({ teams=[] }) => {
+        
+        const message = teams.length > 0 ? null : 'Team does not exist';
         const newTeam = teams[0] || [];
 
         this.setState({
             team: newTeam,
-            loading: false
+            loading: false,
+            message
         })
 
       })
       .catch((error) => this.setState({
         error: true,
-        message: error.message || null,
         loading: false 
       }))
     }
@@ -49,7 +51,7 @@ class TeamCard extends Component {
         const { team, loading, error, message } = this.state;
 
         if (loading) { return <PreloaderCircular />; }
-        if (error) { return <ErrorIndicator message={message} />; }
+        if (error || message !== null) { return <ErrorIndicator message={message} />; }
 
         return (
             <div>
