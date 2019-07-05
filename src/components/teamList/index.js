@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
+import { withAppService } from '../../hoc';
+
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
-import { withAppService } from '../../hoc';
-import TeamsByRowGroups from './components/TeamsByRowGroups';
-
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import Paper from '@material-ui/core/Paper';
+import TeamTile from './components/TeamTile';
+import Grid from '@material-ui/core/Grid';
 
 class TeamList extends Component {
     _isMounted = false;
@@ -18,23 +16,23 @@ class TeamList extends Component {
     };
 
     componentDidMount() {
-    this._isMounted = true;
+        this._isMounted = true;
 
-    this.props.appService.getTeams()
-        .then(({ teams }) => {
-        this.setState({
-            teams,
-            loading: false
-        })
-        })
-        .catch((err) => this.setState({ 
-            error: true, 
-            loading: false 
-        }))
+        this.props.appService.getTeams()
+            .then(({ teams }) => {
+            this.setState({
+                teams,
+                loading: false
+            })
+            })
+            .catch((err) => this.setState({ 
+                error: true, 
+                loading: false 
+            }))
     }
 
     componentWillUnmount() {
-    this._isMounted = false;
+        this._isMounted = false;
     }
 
     render() {
@@ -44,13 +42,13 @@ class TeamList extends Component {
         if (error) { return <ErrorIndicator />; }
 
         return (
-            <Paper>
-            <Table>
-                <TableBody>
-                <TeamsByRowGroups teams={teams} count="4" />
-                </TableBody>
-            </Table>
-            </Paper>
+            <Grid container justify="center">
+                {teams.map((team) => (
+                    <Grid key={team.team_id} item xs={3} align="center">
+                        <TeamTile team={team}/>
+                    </Grid>
+                ))}
+            </Grid>
         )
     }
 }
