@@ -26,13 +26,13 @@ const TeamsByRowGroups = (props) => {
     const classes = useStyles();
 
     return (
-        <Paper className={[classes.control, classes.paper]}>
-            <Link to={`/teams/${team.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to={`/teams/${team.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Paper className={`${classes.control}, ${classes.paper}`}>
                 <h2>{ team.name }</h2>
                 <img src={team.logo} alt="team logo"></img>
                 <p><i>{ team.venue_city }</i></p>
-            </Link>
-        </Paper>
+            </Paper>
+        </Link>
     )
 };
 

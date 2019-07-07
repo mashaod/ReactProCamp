@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withAppService } from '../../hoc';
 
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
-import { withAppService } from '../../hoc';
+import Box from '@material-ui/core/Box';
 
 class TeamCard extends Component {
     _isMounted = false;
@@ -54,15 +55,16 @@ class TeamCard extends Component {
         if (error || message !== null) { return <ErrorIndicator message={message} />; }
 
         return (
-            <div>
+            <Box textAlign="center">
+                <img src={team.logo} alt="team logo"></img>
                 <h1>{team.name}</h1>
                 <p>{team.code}</p>
-                <p>{team.country}</p>
-                <p>{team.venue_city}</p>
-                <p>{team.venue_address}</p>
-                <p>{team.venue_capacity}</p>
-                <p>{team.venue_surface}</p>
-            </div>
+                <p>Country: {team.country}</p>
+                <p>Venue city: {team.venue_city}</p>
+                <p>Venue address: {team.venue_address}</p>
+                <p>Venue capacity: {team.venue_capacity}</p>
+                <p>Venue surface: {team.venue_surface}</p>
+            </Box>
         )
     }
 }
