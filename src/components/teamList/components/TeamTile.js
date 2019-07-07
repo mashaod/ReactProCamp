@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -14,8 +14,6 @@ const useStyles = makeStyles(theme => ({
         }
     },
     control: {
-      padding: theme.spacing(2),
-      margin: theme.spacing(2),
       maxWidth: "250px"
     },
   }));
@@ -27,11 +25,11 @@ const TeamsByRowGroups = (props) => {
 
     return (
         <Link to={`/teams/${team.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <Paper className={`${classes.control}, ${classes.paper}`}>
+            <Box className={`${classes.control}, ${classes.paper}`} m={2} p={2}>
                 <h2>{ team.name }</h2>
                 <img src={team.logo} alt="team logo"></img>
                 <p><i>{ team.venue_city }</i></p>
-            </Paper>
+            </Box>
         </Link>
     )
 };

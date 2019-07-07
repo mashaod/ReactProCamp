@@ -1,55 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
+import { bindActionCreators, compose } from 'redux';
+import { connect } from 'react-redux';
+
 import { withAppService } from '../../hoc';
+import { fetchTeamById } from '../../actions';
 
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
 import Box from '@material-ui/core/Box';
 
 class TeamCard extends Component {
-    _isMounted = false;
 
     static propTypes = {
         match: PropTypes.object.isRequired
     };
 
-    state = {
-        team: [],
-        loading: true,
-        error: false,
-        message: null
-    };
-
     componentDidMount() {
-    this._isMounted = true;
-
-    const { teamId } = this.props.match.params;
-
-    this.props.appService.getTeamById(teamId)
-      .then(({ teams=[] }) => {
-        
-        const message = teams.length > 0 ? null : 'Team does not exist';
-        const newTeam = teams[0] || [];
-
-        this.setState({
-            team: newTeam,
-            loading: false,
-            message
-        })
-
-      })
-      .catch((error) => this.setState({
-        error: true,
-        loading: false 
-      }))
-    }
-
-    componentWillUnmount() {
-        this._isMounted = false;
+        const { teamId } = this.props.match.params;
+        this.props.fetchTeamById(teamId);
     }
 
     render() {
-        const { team, loading, error, message } = this.state;
+        const { team, loading, error, message } = this.props;
 
         if (loading) { return <PreloaderCircular />; }
         if (error || message !== null) { return <ErrorIndicator message={message} />; }
@@ -69,5 +43,19 @@ class TeamCard extends Component {
     }
 }
 
-export default withAppService(TeamCard);
+
+const mapStateToProps = ({ teamCard: { team, loading, message, error }}) => {
+    return { team, loading, message, error };
+};
+
+const mapDispatchToProps = (dispatch, { appService }) => {
+    return bindActionCreators({
+        fetchTeamById: fetchTeamById(appService),
+    }, dispatch);
+};
+  
+export default compose(
+    withAppService(),
+    connect(mapStateToProps, mapDispatchToProps)
+)(TeamCard);
 

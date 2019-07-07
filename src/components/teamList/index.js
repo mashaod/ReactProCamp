@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+
+import { bindActionCreators, compose } from 'redux';
+import { connect } from 'react-redux';
+
 import { withAppService } from '../../hoc';
+import { fetchTeams } from '../../actions';
 
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
@@ -7,36 +12,13 @@ import TeamTile from './components/TeamTile';
 import Grid from '@material-ui/core/Grid';
 
 class TeamList extends Component {
-    _isMounted = false;
-
-    state = {
-        teams: [],
-        loading: true,
-        error: false
-    };
 
     componentDidMount() {
-        this._isMounted = true;
-
-        this.props.appService.getTeams()
-            .then(({ teams }) => {
-            this.setState({
-                teams,
-                loading: false
-            })
-            })
-            .catch((err) => this.setState({ 
-                error: true, 
-                loading: false 
-            }))
-    }
-
-    componentWillUnmount() {
-        this._isMounted = false;
+        this.props.fetchTeams();
     }
 
     render() {
-        const { teams, loading, error } = this.state;
+        const { teams, loading, error } = this.props;
 
         if (loading) { return <PreloaderCircular />; }
         if (error) { return <ErrorIndicator />; }
@@ -53,4 +35,17 @@ class TeamList extends Component {
     }
 }
 
-export default withAppService(TeamList);
+const mapStateToProps = ({ teamList: { teams, loading, error }}) => {
+    return { teams, loading, error };
+};
+
+const mapDispatchToProps = (dispatch, { appService }) => {
+    return bindActionCreators({
+        fetchTeams: fetchTeams(appService),
+    }, dispatch);
+};
+  
+export default compose(
+    withAppService(),
+    connect(mapStateToProps, mapDispatchToProps)
+)(TeamList);

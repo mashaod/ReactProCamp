@@ -8,7 +8,7 @@ export default class AppService {
         });
     };
 
-    getTeamById = async (teamId) => {
+    getTeamById = (teamId) => {
         return requestHandler({
             url: `teams/team/${Number(teamId)}`,
             method: 'GET'

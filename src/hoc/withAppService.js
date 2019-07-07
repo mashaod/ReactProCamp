@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppServiceConsumer } from '../contexts';
 
-const withAppServiceConsumer = (Wrapped) => {
+const withAppServiceConsumer = () => (Wrapped) => {
 
     return (props) => {
         return (
