@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
@@ -53,13 +54,29 @@ class FixtureList extends Component {
                 <TableBody>
                   {fixtures.map(({ fixture_id, homeTeam, awayTeam, goalsHomeTeam, goalsAwayTeam, event_date, status }) => (
                     <TableRow key={fixture_id}>
-                      <TableCell align="right">{homeTeam.team_name}</TableCell>
-                      <TableCell align="right"><img src={homeTeam.logo} height="45px" alt={`logo_${homeTeam.team_name}`}/></TableCell>
-                      <TableCell align="center">{goalsHomeTeam} : {goalsAwayTeam}</TableCell>
-                      <TableCell align="left"><img src={awayTeam.logo} height="45px" alt={`logo_${awayTeam.team_name}`}/></TableCell>
-                      <TableCell align="left">{awayTeam.team_name}</TableCell>
-                      <TableCell align="right">{this.getDate(event_date)}</TableCell>
-                      <TableCell align="left">{status}</TableCell>
+                        <TableCell align="right">
+                            <Link to={`/teams/${homeTeam.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                {homeTeam.team_name}
+                            </Link>
+                        </TableCell>
+                        <TableCell align="right">
+                            <Link to={`/teams/${homeTeam.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <img src={homeTeam.logo} height="45px" alt={`logo_${homeTeam.team_name}`}/>
+                            </Link>
+                        </TableCell>
+                        <TableCell align="center">{goalsHomeTeam} : {goalsAwayTeam}</TableCell>
+                        <TableCell align="left">
+                            <Link to={`/teams/${awayTeam.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <img src={awayTeam.logo} height="45px" alt={`logo_${awayTeam.team_name}`}/>
+                            </Link>
+                        </TableCell>
+                        <TableCell align="left">
+                            <Link to={`/teams/${awayTeam.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                {awayTeam.team_name}
+                            </Link>
+                        </TableCell>
+                        <TableCell align="right">{this.getDate(event_date)}</TableCell>
+                        <TableCell align="left">{status}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
