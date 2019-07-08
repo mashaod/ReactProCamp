@@ -14,4 +14,11 @@ export default class AppService {
             method: 'GET'
         })
     }
+
+    getFixtures = () => {
+        return requestHandler({
+            url: `fixtures/league/2`,
+            method: 'GET'
+        })
+    }
 }

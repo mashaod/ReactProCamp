@@ -52,3 +52,23 @@ export function teamError(error) {
         payload: error
     };
 };
+
+export function fixturesRequested() {
+    return {
+        type: 'FETCH_FIXTURES_REQUEST'
+    };
+};
+
+export function fixturesLoaded(fixtures) {
+    return {
+        type: 'FETCH_FIXTURES_SUCCESS',
+        payload: fixtures
+    };
+};
+
+export function fixturesError(error) {
+    return {
+        type: 'FETCH_FIXTURES_FAILURE',
+        payload: error
+    };
+};

@@ -4,7 +4,10 @@ import {
     teamsError,
     teamRequested,
     teamLoaded,
-    teamError
+    teamError,
+    fixturesRequested,
+    fixturesLoaded,
+    fixturesError
 } from './actions';
 
 const fetchTeams = (appService) => () => (dispatch) => {
@@ -24,8 +27,16 @@ const fetchTeamById = (appService) => (teamId) => (dispatch) => {
         })
         .catch((err) => dispatch(teamError(err)));
 };
+
+const fetchFixtures = (appService) => () => (dispatch) => {
+    dispatch(fixturesRequested());
+    appService.getFixtures()
+        .then(({ fixtures }) => dispatch(fixturesLoaded(fixtures)))
+        .catch((err) => dispatch(fixturesError(err)));
+};
   
 export {
     fetchTeams,
-    fetchTeamById
+    fetchTeamById,
+    fetchFixtures
 };
