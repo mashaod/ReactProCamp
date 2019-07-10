@@ -21,4 +21,11 @@ export default class AppService {
             method: 'GET'
         })
     }
+
+    getFixture = (fixtureId) => {
+        return requestHandler({
+            url: `fixtures/${Number(fixtureId)}`,
+            method: 'GET'
+        })
+    }
 }
