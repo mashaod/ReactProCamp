@@ -72,3 +72,24 @@ export function fixturesError(error) {
         payload: error
     };
 };
+
+export function fixtureRequested(fixture) {
+    return {
+        type: 'FETCH_FIXTURE_REQUEST',
+        payload: fixture
+    };
+};
+
+export function fixtureLoaded(fixture) {
+    return {
+        type: 'FETCH_FIXTURE_SUCCESS',
+        payload: fixture
+    };
+};
+
+export function fixtureError(error) {
+    return {
+        type: 'FETCH_FIXTURE_FAILURE',
+        payload: error
+    };
+};

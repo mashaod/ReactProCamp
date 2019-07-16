@@ -5,7 +5,7 @@ import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
 
 import { withAppService } from '../../hoc';
-import { fetchFixtures } from '../../actions';
+import { fetchFixtures, fetchFixture } from '../../actions';
 
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
@@ -41,9 +41,9 @@ class FixtureList extends Component {
         }).format(new Date(time))
     }
 
-    openFixtureDetails = (fixtureId) => {
+    openFixtureDetails = (fixture) => {
         this.setState({ isOpenFixtureDialog: true });
-        //this.props.fetchFixture(fixtureId);
+        this.props.fetchFixture(fixture);
     }
 
     handleClose = () => {
@@ -51,9 +51,7 @@ class FixtureList extends Component {
     }
 
     handleChangePage = (event, newPage) => {
-        this.setState({
-            page: newPage 
-        });
+        this.setState({ page: newPage });
     }
     
     handleChangeRowsPerPage = (event) => {
@@ -64,11 +62,12 @@ class FixtureList extends Component {
     }
 
     render() {
-        const { fixtures, loading, error } = this.props;
+        const { fixtureList, listLoading, listError,
+                fixtureCard, cardloading, cardError } = this.props;
         const { isOpenFixtureDialog, rowsPerPage, page } = this.state;
 
-        if (loading) { return <PreloaderCircular />; }
-        if (error) { return <ErrorIndicator />; }
+        if (listLoading) { return <PreloaderCircular />; }
+        if (listError) { return <ErrorIndicator />; }
 
         return (
             <React.Fragment>
@@ -76,8 +75,8 @@ class FixtureList extends Component {
                     <Table>
                         <FixturesTableHeader />
                         <TableBody>
-                            {fixtures.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                    .map(({ fixture_id, homeTeam, awayTeam, goalsHomeTeam, goalsAwayTeam, event_date, status }) => (
+                            {fixtureList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                    .map(({ fixture_id, homeTeam, awayTeam, goalsHomeTeam, goalsAwayTeam, event_date, status }, index, array) => (
                                 <TableRow key={fixture_id}>
                                     <TableCell align="right">
                                         <Link to={`/teams/${homeTeam.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -103,7 +102,7 @@ class FixtureList extends Component {
                                     <TableCell align="right">{this.getDate(event_date)}</TableCell>
                                     <TableCell align="left">{status}</TableCell>
                                     <TableCell align="center">
-                                        <Info color="primary" style={{ cursor: 'pointer'}} onClick={() => this.openFixtureDetails(fixture_id)} />
+                                        <Info color="primary" style={{ cursor: 'pointer'}} onClick={() => this.openFixtureDetails(array[index])} />
                                     </TableCell>
                                 </TableRow>
                             ))}
@@ -112,7 +111,7 @@ class FixtureList extends Component {
                     <TablePagination
                         rowsPerPageOptions={[5, 10, 25]}
                         component="div"
-                        count={fixtures.length}
+                        count={fixtureList.length}
                         rowsPerPage={rowsPerPage}
                         page={page}
                         backIconButtonProps={{'aria-label': 'Previous Page'}}
@@ -121,19 +120,30 @@ class FixtureList extends Component {
                         onChangeRowsPerPage={this.handleChangeRowsPerPage}
                     />
                 </Paper>
-                <FixtureDetailsDialog open={isOpenFixtureDialog} handleClose={this.handleClose}/>
+                <FixtureDetailsDialog 
+                    open={isOpenFixtureDialog}
+                    handleClose={this.handleClose}
+                    fixture={fixtureCard}
+                    loading={cardloading}
+                    error={cardError}
+                />
             </React.Fragment>
           );
     }
 }
 
-const mapStateToProps = ({ fixtureList: { fixtures, loading, error }}) => {
-    return { fixtures, loading, error };
+const mapStateToProps = ({
+    fixtureList: { fixtures: fixtureList, loading: listLoading, error: listError },
+    fixtureCard: { fixture: fixtureCard, loading: cardloading, error: cardError }}) => {
+
+    return { fixtureList, listLoading, listError,
+             fixtureCard, cardloading, cardError };
 };
 
 const mapDispatchToProps = (dispatch, { appService }) => {
     return bindActionCreators({
         fetchFixtures: fetchFixtures(appService),
+        fetchFixture: fetchFixture(appService)
     }, dispatch);
 };
   

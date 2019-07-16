@@ -40,7 +40,7 @@ const DialogContent = withStyles(theme => ({
     },
 }))(MuiDialogContent);
 
-const FixtureDetailsDialog = ({ handleClose, open, fixture }) => {
+const FixtureDetailsDialog = ({ open, handleClose, fixture, loading, error }) => {
     return (
         <div>
             <Dialog

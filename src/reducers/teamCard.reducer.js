@@ -34,7 +34,7 @@ const teamCard = (state, { type, payload }) => {
             };
     
         default:
-            return state;
+            return state.teamCard;
         }
   };
   
