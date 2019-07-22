@@ -10,7 +10,7 @@ import DialogEventList from './DialogEventList';
 import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 
-function FixtureDetailsDialog({ open, handleClose, fixture, loading, error }) {
+function FixtureDetailsDialog({ open, handleClose, fixture }) {
     if (!open) return null;
 
     return (
@@ -21,7 +21,6 @@ function FixtureDetailsDialog({ open, handleClose, fixture, loading, error }) {
             fullWidth={true}
             maxWidth={'md'}
             scroll="paper"
-            TransitionComponent="Fade"
             transitionDuration={2000}
         >
             <DialogTitle id="fixture-dialog-title" onClose={handleClose}>

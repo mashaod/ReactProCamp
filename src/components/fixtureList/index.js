@@ -24,6 +24,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 class FixtureList extends Component {
 
     state = {
+        currentFixture: {},
         isOpenFixtureDialog: false,
         rowsPerPage: 5,
         page: 0
@@ -42,12 +43,25 @@ class FixtureList extends Component {
     }
 
     openFixtureDetails = (fixture) => {
-        this.setState({ isOpenFixtureDialog: true });
-        this.props.fetchFixture(fixture);
+        this.setState({
+            currentFixture: fixture,
+            isOpenFixtureDialog: true
+        });
+
+        this.props.fetchFixture(fixture)
+            .then(fixtureDetails => {
+                this.setState({ currentFixture: fixtureDetails });
+            })
+            .catch(() => {
+                this.setState({ isOpenFixtureDialog: false });
+            });
     }
 
     handleClose = () => {
-        this.setState({ isOpenFixtureDialog: false });
+        this.setState({
+            isOpenFixtureDialog: false,
+            currentFixture: {}
+        });
     }
 
     handleChangePage = (event, newPage) => {
@@ -62,9 +76,8 @@ class FixtureList extends Component {
     }
 
     render() {
-        const { fixtureList, listLoading, listError,
-                fixtureCard, cardloading, cardError } = this.props;
-        const { isOpenFixtureDialog, rowsPerPage, page } = this.state;
+        const { fixtureList, listLoading, listError } = this.props;
+        const { currentFixture, isOpenFixtureDialog, rowsPerPage, page } = this.state;
 
         if (listLoading) { return <PreloaderCircular />; }
         if (listError) { return <ErrorIndicator />; }
@@ -123,21 +136,15 @@ class FixtureList extends Component {
                 <FixtureDetailsDialog
                     open={isOpenFixtureDialog}
                     handleClose={this.handleClose}
-                    fixture={fixtureCard}
-                    loading={cardloading}
-                    error={cardError}
+                    fixture={currentFixture}
                 />
             </React.Fragment>
           );
     }
 }
 
-const mapStateToProps = ({
-    fixtureList: { fixtures: fixtureList, loading: listLoading, error: listError },
-    fixtureCard: { fixture: fixtureCard, loading: cardloading, error: cardError }}) => {
-
-    return { fixtureList, listLoading, listError,
-             fixtureCard, cardloading, cardError };
+const mapStateToProps = ({ fixtureList: { fixtures: fixtureList, loading: listLoading, error: listError }}) => {
+    return { fixtureList, listLoading, listError };
 };
 
 const mapDispatchToProps = (dispatch, { appService }) => {

@@ -1,4 +1,4 @@
-import { 
+import {
     teamsRequested,
     teamsLoaded,
     teamsError,
@@ -7,10 +7,7 @@ import {
     teamError,
     fixturesRequested,
     fixturesLoaded,
-    fixturesError,
-    fixtureRequested,
-    fixtureLoaded,
-    fixtureError
+    fixturesError
 } from './actions';
 
 const fetchTeams = (appService) => () => (dispatch) => {
@@ -45,16 +42,13 @@ const fetchFixtures = (appService) => () => (dispatch) => {
 };
 
 const fetchFixture = (appService) => (fixture) => (dispatch) => {
-    dispatch(fixtureRequested(fixture));
-
-    appService.getFixture(fixture.fixture_id)
+    return appService.getFixture(fixture.fixture_id)
         .then(({ fixtures=[] }) => {
-            const fixture = fixtures[0] || {};
-            dispatch(fixtureLoaded(fixture))
+            return fixtures[0] || {};
         })
-        .catch((err) => dispatch(fixtureError(err)));
+        .catch(() => Promise.reject());
 };
-  
+
 export {
     fetchTeams,
     fetchTeamById,

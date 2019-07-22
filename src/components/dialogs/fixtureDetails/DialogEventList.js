@@ -35,9 +35,9 @@ function DialogEventList(props) {
                     <TableCell align="left">Detail</TableCell>
                 </TableRow>
             </TableHead>
-            <TableBody>
-                {fixture.events && fixture.events.map(event => (
-                    <Fade in={true} timeout={2000}>
+            <Fade in={!!fixture.events && !!fixture.events.length} timeout={2000}>
+                <TableBody>
+                    {fixture.events && fixture.events.map(event => (
                         <TableRow key={event.elapsed + event.player_id + event.detail}>
                             <TableCell align="right">
                                 <Icon name={event.detail} className={eventIcon} />
@@ -47,9 +47,9 @@ function DialogEventList(props) {
                             <TableCell align="left">{event.player}</TableCell>
                             <TableCell align="left">{event.detail}</TableCell>
                         </TableRow>
-                    </Fade>
-                ))}
-            </TableBody>
+                    ))}
+                </TableBody>
+            </Fade>
         </Table>
     );
 };
