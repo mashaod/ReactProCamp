@@ -9,7 +9,7 @@ import { fetchFixtures, fetchFixture } from '../../actions';
 
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
-import FixtureDetailsDialog from '../dialogs/fixtureDetails.dialog';
+import FixtureDetailsDialog from '../dialogs/fixtureDetails';
 
 import { FixturesTableHeader } from './components';
 
@@ -35,9 +35,9 @@ class FixtureList extends Component {
 
     getDate = (time) => {
         return  new Intl.DateTimeFormat('en-GB', {
-            year: 'numeric', 
-            month: 'long', 
-            day: '2-digit' 
+            year: 'numeric',
+            month: 'long',
+            day: '2-digit'
         }).format(new Date(time))
     }
 
@@ -53,7 +53,7 @@ class FixtureList extends Component {
     handleChangePage = (event, newPage) => {
         this.setState({ page: newPage });
     }
-    
+
     handleChangeRowsPerPage = (event) => {
         this.setState({
             rowsPerPage: +event.target.value,
@@ -120,7 +120,7 @@ class FixtureList extends Component {
                         onChangeRowsPerPage={this.handleChangeRowsPerPage}
                     />
                 </Paper>
-                <FixtureDetailsDialog 
+                <FixtureDetailsDialog
                     open={isOpenFixtureDialog}
                     handleClose={this.handleClose}
                     fixture={fixtureCard}
@@ -146,7 +146,7 @@ const mapDispatchToProps = (dispatch, { appService }) => {
         fetchFixture: fetchFixture(appService)
     }, dispatch);
 };
-  
+
 export default compose(
     withAppService(),
     connect(mapStateToProps, mapDispatchToProps)
