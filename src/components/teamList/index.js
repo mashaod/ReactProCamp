@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
 
@@ -25,11 +25,13 @@ class TeamList extends Component {
 
         return (
             <Grid container justify="center">
-                {teams.map((team) => (
-                    <Grid key={team.team_id} item xs={3} align="center">
-                        <TeamTile team={team}/>
-                    </Grid>
-                ))}
+                {
+                    teams.map((team) => (
+                        <Grid key={team.team_id} item xs={3} align="center">
+                            <TeamTile team={team}/>
+                        </Grid>
+                    ))
+                }
             </Grid>
         )
     }
@@ -44,7 +46,12 @@ const mapDispatchToProps = (dispatch, { appService }) => {
         fetchTeams: fetchTeams(appService),
     }, dispatch);
 };
-  
+
+TeamList.propTypes = {
+    teams: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired
+};
+
 export default compose(
     withAppService(),
     connect(mapStateToProps, mapDispatchToProps)

@@ -1,6 +1,6 @@
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade } from '@material-ui/core/styles';
 
-export default makeStyles(theme => ({
+const styles = theme => ({
     root: {
         flexGrow: 1,
         backgroundColor: "red"
@@ -49,4 +49,6 @@ export default makeStyles(theme => ({
         alignItems: 'center',
         justifyContent: 'center',
     }
-}));
+});
+
+export default styles;

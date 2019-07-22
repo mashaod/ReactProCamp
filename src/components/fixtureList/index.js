@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 
 import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
@@ -20,7 +21,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Info from '@material-ui/icons/Info';
 import TablePagination from '@material-ui/core/TablePagination';
-
+import styles from './styles';
 class FixtureList extends Component {
 
     state = {
@@ -155,6 +156,7 @@ const mapDispatchToProps = (dispatch, { appService }) => {
 };
 
 export default compose(
+    withStyles(styles),
     withAppService(),
     connect(mapStateToProps, mapDispatchToProps)
 )(FixtureList);

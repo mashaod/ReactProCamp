@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 
-import useStyles from './styles';
+import styles from './styles';
 import logo from '../../assets/logo.png';
 
-export const MenuItems = () => {
+function MenuItemsTemplate() {
     return (
         <React.Fragment>
             <Button component={Link} to="/" color="inherit">Home</Button>
@@ -19,8 +20,7 @@ export const MenuItems = () => {
     )
 }
 
-export const Logo = () => {
-    const classes = useStyles();
+function LogoTemplate({ classes }) {
     return (
         <div className={classes.logoBox}>
             <img className={classes.logo} src={logo} alt="Logo"/>
@@ -28,8 +28,7 @@ export const Logo = () => {
     )
 }
 
-export const SearchBar = () => {
-const classes = useStyles();
+function SearchBarTemplate({ classes }) {
     return (
         <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -37,12 +36,16 @@ const classes = useStyles();
             </div>
             <InputBase
                 placeholder="Search…"
+                inputProps={{ 'aria-label': 'Search' }}
                 classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,
                 }}
-                inputProps={{ 'aria-label': 'Search' }}
             />
         </div>
     )
 }
+
+export const MenuItems = MenuItemsTemplate;
+export const Logo = withStyles(styles)(LogoTemplate);
+export const SearchBar = withStyles(styles)(SearchBarTemplate);

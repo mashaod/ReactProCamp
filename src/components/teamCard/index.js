@@ -13,10 +13,6 @@ import Box from '@material-ui/core/Box';
 
 class TeamCard extends Component {
 
-    static propTypes = {
-        match: PropTypes.object.isRequired
-    };
-
     componentDidMount() {
         const { teamId } = this.props.match.params;
         this.props.fetchTeamById(teamId);
@@ -53,7 +49,11 @@ const mapDispatchToProps = (dispatch, { appService }) => {
         fetchTeamById: fetchTeamById(appService),
     }, dispatch);
 };
-  
+
+TeamCard.propTypes = {
+    match: PropTypes.object.isRequired
+};
+
 export default compose(
     withAppService(),
     connect(mapStateToProps, mapDispatchToProps)

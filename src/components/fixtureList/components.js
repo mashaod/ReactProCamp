@@ -18,11 +18,13 @@ export function FixturesTableHeader() {
     return (
         <TableHead>
             <TableRow>
-                {headRows.map(row => (
-                    <TableCell key={row.id} align={row.align}>
-                        {row.label}
-                    </TableCell>
-                ))}
+                {
+                    headRows.map(row => (
+                        <TableCell key={row.id} align={row.align}>
+                            {row.label}
+                        </TableCell>
+                    ))
+                }
             </TableRow>
         </TableHead>
     )

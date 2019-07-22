@@ -7,21 +7,22 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Fade from '@material-ui/core/Fade';
 
-const styles = theme => ({
-    root: {
-        margin: 0,
-        padding: theme.spacing(2),
-        justifyContent: 'center',
-        alignItems: "center"
-    },
-    team: {
-        justifyContent: 'center'
-    },
-    delimiter: {
-        justifyContent: 'center'
+function styles(theme) {
+    return {
+        root: {
+            margin: 0,
+            padding: theme.spacing(2),
+            justifyContent: 'center',
+            alignItems: "center"
+        },
+        team: {
+            justifyContent: 'center'
+        },
+        delimiter: {
+            justifyContent: 'center'
+        }
     }
-
-});
+};
 
 const DialogHeader = (props) => {
     const { fixture: { homeTeam, goalsHomeTeam, awayTeam, goalsAwayTeam }, classes: { root, team, delimiter } } = props;

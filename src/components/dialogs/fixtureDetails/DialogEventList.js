@@ -11,16 +11,18 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Icon from '../../icon';
 
-const styles = theme => ({
-    root: {
-        margin: 0,
-        padding: theme.spacing(2)
-    },
-    eventIcon: {
-        width: "30px",
-        height: "30px",
+function styles(theme) {
+    return {
+        root: {
+            margin: 0,
+            padding: theme.spacing(2)
+        },
+        eventIcon: {
+            width: "30px",
+            height: "30px",
+        }
     }
-});
+};
 
 function DialogEventList(props) {
     const { fixture, classes: { eventIcon } } = props;

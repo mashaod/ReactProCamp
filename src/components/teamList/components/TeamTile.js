@@ -1,37 +1,29 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
+import styles from '../styles';
 
 import Box from '@material-ui/core/Box';
 
-const useStyles = makeStyles(theme => ({
-    paper: {
-        '&:hover': {
-            transform: "scale(1.01)",
-            transition: "0.3s",
-            boxShadow: "0px 1px 12px 0px rgba(0,0,0,0.4), 0px 1px 1px 0px rgba(0,0,0,0.25), 0px 8px 5px -1px rgba(0,0,0,0.12)"
-        }
-    },
-    control: {
-      maxWidth: "250px"
-    },
-  }));
-
-const TeamsByRowGroups = (props) => {
-    const { team } = props;
-
-    const classes = useStyles();
+function TeamsByRowGroups({ team, classes }) {
+    const { team_id, name, logo, venue_city } = team;
+    const { teamLink, control, paper } = classes;
 
     return (
-        <Link to={`/teams/${team.team_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <Box className={`${classes.control}, ${classes.paper}`} m={2} p={2}>
-                <h2>{ team.name }</h2>
-                <img src={team.logo} alt="team logo"></img>
-                <p><i>{ team.venue_city }</i></p>
+        <Link to={`/teams/${team_id}`} className={ teamLink }>
+            <Box className={`${ control }, ${ paper }`} m={2} p={2}>
+                <h2>{ name }</h2>
+                <img src={ logo } alt="team logo"></img>
+                <p><i>{ venue_city }</i></p>
             </Box>
         </Link>
     )
 };
 
-export default TeamsByRowGroups;
+TeamsByRowGroups.propTypes = {
+    team: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(TeamsByRowGroups);

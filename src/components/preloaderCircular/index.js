@@ -1,10 +1,19 @@
 import React from 'react';
-import useStyles from './styles';
+import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const PreloaderCircular = () => {
-    const classes = useStyles();
+function styles(theme) {
+    return {
+        root: {
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            margin: "-50px 0px 0px -50px"
+        }
+    }
+};
 
+function PreloaderCircular({ classes }) {
     return (
         <div className={classes.root} >
             <CircularProgress
@@ -15,4 +24,4 @@ const PreloaderCircular = () => {
     )
 };
 
-export default PreloaderCircular;
+export default withStyles(styles)(PreloaderCircular);
