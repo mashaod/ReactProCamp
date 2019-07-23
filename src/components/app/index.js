@@ -5,7 +5,7 @@ import history from '../../history';
 import Header from '../header';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import { TeamsPage, TeamPage, FixturesPage, NotFoundPage } from '../../pages';
+import { HomePage, TeamsPage, TeamPage, FixturesPage, NotFoundPage } from '../../pages';
 
 
 function App() {
@@ -13,11 +13,11 @@ function App() {
         <Router history={history}>
             <Header />
             <CssBaseline />
-            <Container>
+            <Container maxWidth="xl">
                 <Switch>
-                    <Redirect from="/" exact to="/teams" />
                     <Redirect from="/odds" exact to="/teams" />
 
+                    <Route path='/' exact component={HomePage}></Route>
                     <Route path='/teams' exact component={TeamsPage}></Route>
                     <Route path='/teams/:teamId' exact component={TeamPage}></Route>
                     <Route path='/fixtures' exact component={FixturesPage}></Route>
