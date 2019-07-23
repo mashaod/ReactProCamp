@@ -1,12 +1,17 @@
 function styles(theme) {
     return {
-        root: {
-            margin: 0,
-            padding: theme.spacing(2)
+        paper: {
+            width: '100%'
         },
-        eventIcon: {
-            width: "30px",
-            height: "30px",
+        cellIcon: {
+            cursor: 'pointer'
+        },
+        cellLink: {
+            textDecoration: 'none',
+            color: 'inherit'
+        },
+        teamLogo: {
+            height: '50px'
         }
     }
 }

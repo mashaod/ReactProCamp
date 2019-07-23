@@ -24,7 +24,7 @@ class TeamList extends Component {
         if (error) { return <ErrorIndicator />; }
 
         return (
-            <Grid container justify="center">
+            <Grid container item xs={8} justify="center">
                 {
                     teams.map((team) => (
                         <Grid key={team.team_id} item xs={3} align="center">
