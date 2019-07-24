@@ -8,7 +8,7 @@ function styles(theme) {
             position: "absolute",
             top: "50%",
             left: "50%",
-            margin: "-50px 0px 0px -50px"
+            transform: "translate(-50%,-50%)"
         }
     }
 };
