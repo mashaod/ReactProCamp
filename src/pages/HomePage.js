@@ -4,6 +4,10 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
+import LiveFixtures from '../components/liveFixtures';
+//import Standings from '../components/Standings';
+//import Odds from '../components/Odds';
+
 function styles(theme) {
     return {
         root: {
@@ -11,7 +15,8 @@ function styles(theme) {
           },
           paper: {
             height: 540,
-            margin: (0, theme.spacing(2))
+            margin: (0, theme.spacing(2)),
+            position: "relative"
           },
     }
 }
@@ -19,9 +24,9 @@ function styles(theme) {
 const HomePage = ({ classes }) =>
     <Box display="flex" justifyContent="center" m={2} p={2}>
         <Grid container justify="center" className={classes.root}>
-            <Grid item md={4}>
+            <Grid item md={4} position="relative">
                 <Paper className={classes.paper}>
-                    Live Fixtures
+                    <LiveFixtures />
                 </Paper>
             </Grid>
             <Grid item md={4}>
