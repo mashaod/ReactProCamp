@@ -113,12 +113,12 @@ export const liveFixtures = {
             "homeTeam": {
                 "team_id": 4019,
                 "team_name": "Swope Park Rangers",
-                "logo": "https://www.api-football.com/public/teams/4019.png"
+                "logo": "https://www.api-football.com/public/teams/66.png"
             },
             "awayTeam": {
                 "team_id": 4021,
                 "team_name": "Tampa Bay Rowdies",
-                "logo": "https://www.api-football.com/public/teams/4021.png"
+                "logo": "https://www.api-football.com/public/teams/67.png"
             },
             "goalsHomeTeam": 0,
             "goalsAwayTeam": 2,
@@ -145,12 +145,12 @@ export const liveFixtures = {
             "homeTeam": {
                 "team_id": 4019,
                 "team_name": "Swope Park Rangers",
-                "logo": "https://www.api-football.com/public/teams/4019.png"
+                "logo": "https://www.api-football.com/public/teams/68.png"
             },
             "awayTeam": {
                 "team_id": 4021,
                 "team_name": "Tampa Bay Rowdies",
-                "logo": "https://www.api-football.com/public/teams/4021.png"
+                "logo": "https://www.api-football.com/public/teams/69.png"
             },
             "goalsHomeTeam": 0,
             "goalsAwayTeam": 2,
@@ -177,12 +177,12 @@ export const liveFixtures = {
             "homeTeam": {
                 "team_id": 4019,
                 "team_name": "Swope Park Rangers",
-                "logo": "https://www.api-football.com/public/teams/4019.png"
+                "logo": "https://www.api-football.com/public/teams/70.png"
             },
             "awayTeam": {
                 "team_id": 4021,
                 "team_name": "Tampa Bay Rowdies",
-                "logo": "https://www.api-football.com/public/teams/4021.png"
+                "logo": "https://www.api-football.com/public/teams/71.png"
             },
             "goalsHomeTeam": 0,
             "goalsAwayTeam": 2,
@@ -209,12 +209,12 @@ export const liveFixtures = {
             "homeTeam": {
                 "team_id": 4019,
                 "team_name": "Swope Park Rangers",
-                "logo": "https://www.api-football.com/public/teams/4019.png"
+                "logo": "https://www.api-football.com/public/teams/72.png"
             },
             "awayTeam": {
                 "team_id": 4021,
                 "team_name": "Tampa Bay Rowdies",
-                "logo": "https://www.api-football.com/public/teams/4021.png"
+                "logo": "https://www.api-football.com/public/teams/73.png"
             },
             "goalsHomeTeam": 0,
             "goalsAwayTeam": 2,
