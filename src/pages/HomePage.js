@@ -14,7 +14,7 @@ function styles(theme) {
             flexGrow: 1,
           },
           paper: {
-            height: 540,
+            minHeight: 600,
             margin: (0, theme.spacing(2)),
             position: "relative"
           },

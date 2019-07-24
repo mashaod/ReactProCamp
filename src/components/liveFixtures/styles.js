@@ -1,17 +1,11 @@
 function styles(theme) {
     return {
-        paper: {
-            width: '100%'
-        },
-        cellIcon: {
-            cursor: 'pointer'
-        },
-        cellLink: {
-            textDecoration: 'none',
-            color: 'inherit'
+        button: {
+            margin: theme.spacing(2),
         },
         teamLogo: {
-            height: '50px'
+            height: '40px',
+            width: '40px'
         }
     }
 }

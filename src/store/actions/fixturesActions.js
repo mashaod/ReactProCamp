@@ -71,10 +71,11 @@ const fetchFixtures = (appService) => () => (dispatch) => {
 const fetchLiveFixtures = (appService) => () => (dispatch) => {
     dispatch(liveFixturesRequested());
 
-    appService.getLiveFixtures()
+    return appService.getLiveFixtures()
         .then(({ fixtures }) => {
             const fixturesPL = fixtures.filter((f) => f.league_id === PremierleagueId);
             dispatch(liveFixturesLoaded({ fixtures, fixturesPL }))
+            return [ ...fixtures ];
         })
         .catch((err) => dispatch(liveFixturesError(err)));
 };

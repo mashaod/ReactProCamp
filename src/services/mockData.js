@@ -131,7 +131,7 @@ export const liveFixtures = {
         },
         {
             "fixture_id": 154843,
-            "league_id": 518,
+            "league_id": 2,
             "event_date": "2019-07-07T21:00:00+00:00",
             "event_timestamp": 1562533200,
             "firstHalfStart": 1562533200,
@@ -144,13 +144,13 @@ export const liveFixtures = {
             "referee": null,
             "homeTeam": {
                 "team_id": 4019,
-                "team_name": "Swope Park Rangers",
-                "logo": "https://www.api-football.com/public/teams/68.png"
+                "team_name": "Liverpool",
+                "logo": "https://www.api-football.com/public/teams/39.png"
             },
             "awayTeam": {
                 "team_id": 4021,
-                "team_name": "Tampa Bay Rowdies",
-                "logo": "https://www.api-football.com/public/teams/69.png"
+                "team_name": "Wolves",
+                "logo": "https://www.api-football.com/public/teams/40.png"
             },
             "goalsHomeTeam": 0,
             "goalsAwayTeam": 2,
