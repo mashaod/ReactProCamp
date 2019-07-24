@@ -1,4 +1,5 @@
 import requestHandler from './helpers/requestHandler';
+import { liveFixtures } from './mockData';
 
 export default class AppService {
     getTeams = () => {
@@ -20,6 +21,10 @@ export default class AppService {
             url: `fixtures/league/2`,
             method: 'GET'
         })
+    }
+
+    getLiveFixtures = () => {
+        return new Promise(resolve => setTimeout(() => resolve(liveFixtures), 1500));
     }
 
     getFixture = (fixtureId) => {
