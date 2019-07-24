@@ -37,7 +37,7 @@ const teamList = (state, { type, payload }) => {
             };
 
         default:
-            return state.teamList;
+            return state;
         }
   };
 

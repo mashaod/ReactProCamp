@@ -4,16 +4,14 @@ import {
     FETCH_TEAM_BY_ID_SUCCESS
 } from '../actionTypes';
 
-const teamCard = (state, { type, payload }) => {
+const initState = {
+    team: {},
+    loading: true,
+    message: null,
+    error: null
+};
 
-    if (state === undefined) {
-        return {
-            team: {},
-            loading: true,
-            message: null,
-            error: null
-        };
-    }
+const teamCard = (state = initState, { type, payload }) => {
 
     switch (type) {
         case FETCH_TEAM_BY_ID_REQUEST:
@@ -40,7 +38,7 @@ const teamCard = (state, { type, payload }) => {
             };
 
         default:
-            return state.teamCard;
+            return state;
         }
   };
 
