@@ -78,11 +78,11 @@ class FixtureList extends Component {
     }
 
     render() {
-        const { fixtureList, listLoading, listError, classes } = this.props;
+        const { fixtures, loading, error, classes } = this.props;
         const { currentFixture, isOpenFixtureDialog, rowsPerPage, page } = this.state;
 
-        if (listLoading) { return <PreloaderCircular />; }
-        if (listError) { return <ErrorIndicator />; }
+        if (loading) { return <PreloaderCircular />; }
+        if (error) { return <ErrorIndicator />; }
 
         return (
             <React.Fragment>
@@ -91,7 +91,7 @@ class FixtureList extends Component {
                         <Table>
                             <FixturesTableHeader />
                             <TableBody>
-                                {fixtureList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                {fixtures.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                         .map(({ fixture_id, homeTeam, awayTeam, goalsHomeTeam, goalsAwayTeam, event_date, status }, index, array) => (
                                     <TableRow key={fixture_id}>
                                         <TableCell align="right" width="20%">
@@ -127,7 +127,7 @@ class FixtureList extends Component {
                         <TablePagination
                             rowsPerPageOptions={[5, 10, 25]}
                             component="div"
-                            count={fixtureList.length}
+                            count={fixtures.length}
                             rowsPerPage={rowsPerPage}
                             page={page}
                             backIconButtonProps={{'aria-label': 'Previous Page'}}
@@ -147,8 +147,8 @@ class FixtureList extends Component {
     }
 }
 
-const mapStateToProps = ({ fixtureList: { fixtures: fixtureList, loading: listLoading, error: listError }}) => {
-    return { fixtureList, listLoading, listError };
+const mapStateToProps = ({ fixtureList: { fixtures, isFixturesloading: loading, fixturesError: error }}) => {
+    return { fixtures, loading, error };
 };
 
 const mapDispatchToProps = (dispatch, { appService }) => {
