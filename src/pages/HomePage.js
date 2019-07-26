@@ -5,8 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
 import LiveFixtures from '../components/liveFixtures';
-//import Standings from '../components/Standings';
-//import Odds from '../components/Odds';
+import Standings from '../components/standings';
+//import Odds from '../components/odds';
 
 function styles(theme) {
     return {
@@ -31,7 +31,7 @@ const HomePage = ({ classes }) =>
             </Grid>
             <Grid item md={4}>
                 <Paper className={classes.paper}>
-                    Standing
+                    <Standings />
                 </Paper>
             </Grid>
             <Grid item md={4}>

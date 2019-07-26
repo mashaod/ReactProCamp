@@ -33,4 +33,11 @@ export default class AppService {
             method: 'GET'
         })
     }
+
+    getStandings = () => {
+        return requestHandler({
+            url: `leagueTable/2`,
+            method: 'GET'
+        })
+    }
 }
