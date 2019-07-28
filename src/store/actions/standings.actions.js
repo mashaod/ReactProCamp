@@ -10,10 +10,10 @@ function standingsRequested() {
     };
 };
 
-function standingsLoaded(data) {
+function standingsLoaded(standings) {
     return {
         type: FETCH_STANDINGS_SUCCESS,
-        payload: data
+        payload: standings
     };
 };
 
@@ -25,16 +25,14 @@ function standingsError(error) {
 };
 
 const fetchStandings = (appService) => () => (dispatch) => {
-    //dispatch(standingsRequested());
+    dispatch(standingsRequested());
 
-    appService.getStandings()
-        .then((data) => {
-            console.log(data)
-            // const message = teams.length > 0 ? null : 'Team does not exist';
-            // const team = teams[0] || [];
-            // return dispatch(standingsLoaded({ team, message }));
+    return appService.getStandings()
+        .then((standings) => {
+            dispatch(standingsLoaded(standings));
+            return { ...standings };
         })
-        //.catch((err) => dispatch(standingsError(err)));
+        .catch((err) => dispatch(standingsError(err)));
 };
 
 export {
