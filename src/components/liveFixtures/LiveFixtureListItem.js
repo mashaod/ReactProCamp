@@ -17,7 +17,7 @@ const LiveFixtureListItem = ({ fixture, isLast, classes }) => {
 
     return (
         <React.Fragment>
-            <ListItem alignItems="flex-start">
+            <ListItem alignItems="flex-start" className={classes.listItem}>
                 <ListItemAvatar>
                     <Avatar alt="Remy Sharp" src={homeTeam.logo} className={classes.teamLogo}/>
                 </ListItemAvatar>

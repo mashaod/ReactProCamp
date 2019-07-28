@@ -4,7 +4,7 @@ import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
 
 import { withAppService } from '../../hoc';
-import { fetchLiveFixtures } from '../../store/actions/fixturesActions';
+import { fetchLiveFixtures } from '../../store/actions/fixtures.actions';
 
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
@@ -12,6 +12,7 @@ import styles from './styles';
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
 import LiveFixtureList from './LiveFixtureList';
+import Typography from '@material-ui/core/Typography';
 
 import Button from '@material-ui/core/Button';
 
@@ -43,11 +44,20 @@ class LiveFixtures extends Component {
 
         return (
             <div>
-                <div>
-                    <Button variant="contained" color="primary" onClick={this.showAllFixtures} className={classes.button}>
+                <Typography
+                    component="div"
+                    color="primary"
+                    variant="h5"
+                    align="center"
+                    className={classes.title}
+                >
+                    LIFE FIXTURES
+                </Typography>
+                <div className={classes.buttonContainer}>
+                    <Button size="small" variant="contained" color="primary" onClick={this.showAllFixtures} className={classes.button}>
                         All
                     </Button>
-                    <Button variant="contained" color="primary" onClick={this.showPLFixtures} className={classes.button}>
+                    <Button size="small" variant="contained" color="primary" onClick={this.showPLFixtures} className={classes.button}>
                         FA Premier League
                     </Button>
                 </div>
