@@ -35,9 +35,28 @@ export default class AppService {
     }
 
     getStandings = () => {
-        return requestHandler({
+        const premierLeaguePromise = requestHandler({
             url: `leagueTable/2`,
             method: 'GET'
         })
+
+        const ChampionshipPromise = requestHandler({
+            url: `leagueTable/3`,
+            method: 'GET'
+        })
+
+        const FAWSLPromise = requestHandler({
+            url: `leagueTable/225`,
+            method: 'GET'
+        })
+
+        return Promise.all([premierLeaguePromise, ChampionshipPromise, FAWSLPromise])
+            .then(([ premierLeague, championship, FAWSLPromise ]) => {
+                return {
+                    premierLeague: premierLeague.standings[0] || [],
+                    championship: championship.standings[0] || [],
+                    FAWSL: FAWSLPromise.standings[0] || []
+                }
+            });
     }
 }
