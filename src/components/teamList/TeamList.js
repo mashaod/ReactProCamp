@@ -4,7 +4,7 @@ import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
 
 import { withAppService } from '../../hoc';
-import { fetchTeams } from '../../store/actions/teamsActions';
+import { fetchTeams } from '../../store/actions/teams.actions';
 
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';

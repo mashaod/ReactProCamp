@@ -6,7 +6,7 @@ import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
 
 import { withAppService } from '../../hoc';
-import { fetchFixtures, fetchFixture } from '../../store/actions/fixturesActions';
+import { fetchFixtures, fetchFixture } from '../../store/actions/fixtures.actions';
 
 import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
