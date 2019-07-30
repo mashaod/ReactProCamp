@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TeamList container TeamList container initial renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`TeamList container TeamList container isLoading renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`TeamList container TeamList container render <TeamTile /> renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`TeamList container TeamList container with error renders properly 1`] = `ShallowWrapper {}`;

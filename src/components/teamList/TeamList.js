@@ -10,8 +10,7 @@ import ErrorIndicator from '../errorIndicator';
 import PreloaderCircular from '../preloaderCircular';
 import TeamTile from './components/TeamTile';
 import Grid from '@material-ui/core/Grid';
-
-class TeamList extends Component {
+export class TeamList extends Component {
 
     componentDidMount() {
         this.props.fetchTeams();
