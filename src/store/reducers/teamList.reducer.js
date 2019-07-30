@@ -4,15 +4,13 @@ import {
     FETCH_TEAMS_SUCCESS
 } from '../actionTypes';
 
-const teamList = (state, { type, payload }) => {
+const initState = {
+    teams: [],
+    loading: true,
+    error: null
+};
 
-    if (state === undefined) {
-        return {
-            teams: [],
-            loading: true,
-            error: null
-        };
-    }
+const teamList = (state = initState, { type, payload }) => {
 
     switch (type) {
         case FETCH_TEAMS_REQUEST:
