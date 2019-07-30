@@ -1,5 +1,4 @@
-export const liveFixtures = {
-    "results": 2,
+export const liveFixturesMockData = {
     "fixtures": [
         {
             "fixture_id": 65,
@@ -320,6 +319,58 @@ export const liveFixtures = {
                 "extratime": null,
                 "penalty": null
             }
+        }
+    ]
+};
+
+export const oddsMockData = {
+    "odds": [
+        {
+            "fixture": {
+                "league_id": 404,
+                "fixture_id": 108705,
+                "updateAt": 1557496046
+            },
+            "bookmakers": [
+                {
+                    "bookmaker_id": 1,
+                    "bookmaker_name": "bwin",
+                    "bets": [
+                        {
+                            "label_id": 1,
+                            "label_name": "Match Winner",
+                            "values": [
+                                {
+                                    "value": "Home",
+                                    "odd": "2.20"
+                                },
+                                {
+                                    "value": "Draw",
+                                    "odd": "3.70"
+                                },
+                                {
+                                    "value": "Away",
+                                    "odd": "2.60"
+                                }
+                            ]
+                        },
+                        {
+                            "label_id": 8,
+                            "label_name": "Both Teams To Score",
+                            "values": [
+                                {
+                                    "value": "Yes",
+                                    "odd": "1.40"
+                                },
+                                {
+                                    "value": "No",
+                                    "odd": "2.75"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 };

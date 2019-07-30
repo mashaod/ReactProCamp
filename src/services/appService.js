@@ -1,5 +1,5 @@
 import requestHandler from './helpers/requestHandler';
-import { liveFixtures } from './mockData';
+import { liveFixturesMockData, oddsMockData } from './mockData';
 
 export default class AppService {
     getTeams = () => {
@@ -24,7 +24,11 @@ export default class AppService {
     }
 
     getLiveFixtures = () => {
-        return new Promise(resolve => setTimeout(() => resolve(liveFixtures), 1500));
+        return new Promise(resolve => setTimeout(() => resolve(liveFixturesMockData), 1000));
+    }
+
+    getOdds = () => {
+        return new Promise(resolve => setTimeout(() => resolve(oddsMockData), 1000));
     }
 
     getFixture = (fixtureId) => {
