@@ -86,7 +86,7 @@ class FixtureList extends Component {
 
         return (
             <React.Fragment>
-                <Grid container item xs={8} justify="center">
+                <Grid container item xs={12} lg={8} justify="center">
                     <Paper className={classes.paper}>
                         <Table>
                             <FixturesTableHeader />

@@ -34,8 +34,8 @@ const DialogHeader = (props) => {
                     <h2>{homeTeam.team_name}</h2>
                 </Grid>
 
-                <Grid container item xs={3} className={delimiter}>
-                    <Typography align="center" variant="h1">
+                <Grid container item xs={6} md={3} className={delimiter}>
+                    <Typography align="center" variant="h2">
                         {goalsHomeTeam} : {goalsAwayTeam}
                     </Typography>
                 </Grid>
