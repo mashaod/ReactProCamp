@@ -80,7 +80,7 @@ class Standings extends Component {
                 </div>
                 <div>
                     <List>
-                        <ListItem alignItems="center" className={[classes.listItem, classes.header]}>
+                        <ListItem alignItems="center" className={`${classes.listItem}  ${classes.header}`}>
                             <div>rank</div>
                             <div>team</div>
                             <div>points</div>
@@ -88,7 +88,7 @@ class Standings extends Component {
                         {
                             standings.map(standing => {
                                 return (
-                                        <ListItem alignItems="center" className={classes.listItem}>
+                                        <ListItem alignItems="center" className={classes.listItem} key={standing.team_id}>
                                             <div>
                                                 {standing.rank}
                                             </div>
