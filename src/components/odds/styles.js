@@ -16,7 +16,8 @@ function styles(theme) {
             alignItems: 'center',
             "& > div": {
                 display: 'flex',
-                alignItems: 'center'
+                alignItems: 'center',
+                width: '33.3%'
             }
         },
         info: {
@@ -33,19 +34,19 @@ function styles(theme) {
             width: '40px'
         },
         leftTeam: {
-            textAlign: 'left',
+            justifyContent: 'flex-start',
             "& > div": {
                 padding: theme.spacing(1),
             }
         },
         rightTeam: {
-            textAlign: 'right',
+            justifyContent: 'flex-end',
             "& > div": {
                 padding: theme.spacing(1),
             }
         },
         odds: {
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             "& > div": {
                 padding: theme.spacing(1),
             }

@@ -24,17 +24,17 @@ function styles(theme) {
 const HomePage = ({ classes }) =>
     <Box display="flex" justifyContent="center" m={2} p={2}>
         <Grid container justify="center" className={classes.root}>
-            <Grid item md={4} position="relative">
+            <Grid item xl={4} md={6} position="relative">
                 <Paper className={classes.paper}>
                     <LiveFixtures />
                 </Paper>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xl={4} md={6}>
                 <Paper className={classes.paper}>
                     <Standings />
                 </Paper>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xl={4} md={6}>
                 <Paper className={classes.paper}>
                     <Odds />
                 </Paper>
