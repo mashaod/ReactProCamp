@@ -327,8 +327,51 @@ export const oddsMockData = {
     "odds": [
         {
             "fixture": {
-                "league_id": 404,
-                "fixture_id": 108705,
+                "league_id": 2,
+                "fixture_id": 1,
+                "updateAt": 1557496046
+            },
+            "bookmakers": [
+                {
+                    "bookmaker_id": 1,
+                    "bookmaker_name": "bwin",
+                    "bets": [
+                        {
+                            "label_id": 1,
+                            "label_name": "Match Winner",
+                            "values": [
+                                {
+                                    "value": "Home",
+                                    "odd": "2.22"
+                                },
+                                {
+                                    "value": "Away",
+                                    "odd": "3.30"
+                                }
+                            ]
+                        },
+                        {
+                            "label_id": 8,
+                            "label_name": "Both Teams To Score",
+                            "values": [
+                                {
+                                    "value": "Yes",
+                                    "odd": "3.20"
+                                },
+                                {
+                                    "value": "No",
+                                    "odd": "2.35"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "league_id": 2,
+                "fixture_id": 2,
                 "updateAt": 1557496046
             },
             "bookmakers": [
@@ -345,12 +388,94 @@ export const oddsMockData = {
                                     "odd": "2.20"
                                 },
                                 {
-                                    "value": "Draw",
-                                    "odd": "3.70"
+                                    "value": "Away",
+                                    "odd": "2.60"
+                                }
+                            ]
+                        },
+                        {
+                            "label_id": 8,
+                            "label_name": "Both Teams To Score",
+                            "values": [
+                                {
+                                    "value": "Yes",
+                                    "odd": "1.20"
+                                },
+                                {
+                                    "value": "No",
+                                    "odd": "3.55"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "league_id": 2,
+                "fixture_id": 3,
+                "updateAt": 1557496046
+            },
+            "bookmakers": [
+                {
+                    "bookmaker_id": 1,
+                    "bookmaker_name": "bwin",
+                    "bets": [
+                        {
+                            "label_id": 1,
+                            "label_name": "Match Winner",
+                            "values": [
+                                {
+                                    "value": "Home",
+                                    "odd": "1.40"
                                 },
                                 {
                                     "value": "Away",
-                                    "odd": "2.60"
+                                    "odd": "1.64"
+                                }
+                            ]
+                        },
+                        {
+                            "label_id": 8,
+                            "label_name": "Both Teams To Score",
+                            "values": [
+                                {
+                                    "value": "Yes",
+                                    "odd": "2.30"
+                                },
+                                {
+                                    "value": "No",
+                                    "odd": "3.73"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "league_id": 2,
+                "fixture_id": 4,
+                "updateAt": 1557496046
+            },
+            "bookmakers": [
+                {
+                    "bookmaker_id": 1,
+                    "bookmaker_name": "bwin",
+                    "bets": [
+                        {
+                            "label_id": 1,
+                            "label_name": "Match Winner",
+                            "values": [
+                                {
+                                    "value": "Home",
+                                    "odd": "1.60"
+                                },
+                                {
+                                    "value": "Away",
+                                    "odd": "4.40"
                                 }
                             ]
                         },
@@ -364,7 +489,93 @@ export const oddsMockData = {
                                 },
                                 {
                                     "value": "No",
-                                    "odd": "2.75"
+                                    "odd": "3.73"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "league_id": 2,
+                "fixture_id": 5,
+                "updateAt": 1557496046
+            },
+            "bookmakers": [
+                {
+                    "bookmaker_id": 1,
+                    "bookmaker_name": "bwin",
+                    "bets": [
+                        {
+                            "label_id": 1,
+                            "label_name": "Match Winner",
+                            "values": [
+                                {
+                                    "value": "Home",
+                                    "odd": "3.20"
+                                },
+                                {
+                                    "value": "Away",
+                                    "odd": "2.20"
+                                }
+                            ]
+                        },
+                        {
+                            "label_id": 8,
+                            "label_name": "Both Teams To Score",
+                            "values": [
+                                {
+                                    "value": "Yes",
+                                    "odd": "1.43"
+                                },
+                                {
+                                    "value": "No",
+                                    "odd": "1.55"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "league_id": 2,
+                "fixture_id": 6,
+                "updateAt": 1557496046
+            },
+            "bookmakers": [
+                {
+                    "bookmaker_id": 1,
+                    "bookmaker_name": "bwin",
+                    "bets": [
+                        {
+                            "label_id": 1,
+                            "label_name": "Match Winner",
+                            "values": [
+                                {
+                                    "value": "Home",
+                                    "odd": "1.20"
+                                },
+                                {
+                                    "value": "Away",
+                                    "odd": "2.43"
+                                }
+                            ]
+                        },
+                        {
+                            "label_id": 8,
+                            "label_name": "Both Teams To Score",
+                            "values": [
+                                {
+                                    "value": "Yes",
+                                    "odd": "1.30"
+                                },
+                                {
+                                    "value": "No",
+                                    "odd": "2.55"
                                 }
                             ]
                         }
@@ -374,3 +585,200 @@ export const oddsMockData = {
         }
     ]
 };
+
+export const fixturesMockData = {
+    "fixtures": [
+        {
+            "fixture_id": 1,
+            "league_id": 2,
+            "event_date": "2019-04-10T19:00:00+00:00",
+            "event_timestamp": 1533927600,
+            "firstHalfStart": 1533927600,
+            "secondHalfStart": 1533931200,
+            "round": "Regular Season - 1",
+            "status": "Match Finished",
+            "statusShort": "FT",
+            "elapsed": 90,
+            "venue": "Old Trafford (Manchester)",
+            "referee": null,
+            "homeTeam": {
+                "team_id": 33,
+                "team_name": "Bournemouth",
+                "logo": "https://www.api-football.com/public/teams/35.png"
+            },
+            "awayTeam": {
+                "team_id": 46,
+                "team_name": "Southampton",
+                "logo": "https://www.api-football.com/public/teams/41.png"
+            },
+            "goalsHomeTeam": 2,
+            "goalsAwayTeam": 1,
+            "score": {
+                "halftime": "1-0",
+                "fulltime": "2-1",
+                "extratime": null,
+                "penalty": null
+            }
+        },
+        {
+            "fixture_id": 2,
+            "league_id": 2,
+            "event_date": "2019-05-10T19:00:00+00:00",
+            "event_timestamp": 1533927600,
+            "firstHalfStart": 1533927600,
+            "secondHalfStart": 1533931200,
+            "round": "Regular Season - 1",
+            "status": "Match Finished",
+            "statusShort": "FT",
+            "elapsed": 90,
+            "venue": "Old Trafford (Manchester)",
+            "referee": null,
+            "homeTeam": {
+                "team_id": 33,
+                "team_name": "Wolves",
+                "logo": "https://www.api-football.com/public/teams/39.png"
+            },
+            "awayTeam": {
+                "team_id": 46,
+                "team_name": "Watford",
+                "logo": "https://www.api-football.com/public/teams/38.png"
+            },
+            "goalsHomeTeam": 2,
+            "goalsAwayTeam": 1,
+            "score": {
+                "halftime": "1-0",
+                "fulltime": "2-1",
+                "extratime": null,
+                "penalty": null
+            }
+        },
+        {
+            "fixture_id": 3,
+            "league_id": 2,
+            "event_date": "2019-06-10T19:00:00+00:00",
+            "event_timestamp": 1533927600,
+            "firstHalfStart": 1533927600,
+            "secondHalfStart": 1533931200,
+            "round": "Regular Season - 1",
+            "status": "Match Finished",
+            "statusShort": "FT",
+            "elapsed": 90,
+            "venue": "Old Trafford (Manchester)",
+            "referee": null,
+            "homeTeam": {
+                "team_id": 33,
+                "team_name": "Newcastle",
+                "logo": "https://www.api-football.com/public/teams/34.png"
+            },
+            "awayTeam": {
+                "team_id": 46,
+                "team_name": "Brighton",
+                "logo": "https://www.api-football.com/public/teams/51.png"
+            },
+            "goalsHomeTeam": 2,
+            "goalsAwayTeam": 1,
+            "score": {
+                "halftime": "1-0",
+                "fulltime": "2-1",
+                "extratime": null,
+                "penalty": null
+            }
+        },
+        {
+            "fixture_id": 4,
+            "league_id": 2,
+            "event_date": "2019-07-10T19:00:00+00:00",
+            "event_timestamp": 1533927600,
+            "firstHalfStart": 1533927600,
+            "secondHalfStart": 1533931200,
+            "round": "Regular Season - 1",
+            "status": "Match Finished",
+            "statusShort": "FT",
+            "elapsed": 90,
+            "venue": "Old Trafford (Manchester)",
+            "referee": null,
+            "homeTeam": {
+                "team_id": 33,
+                "team_name": "Arsenal",
+                "logo": "https://www.api-football.com/public/teams/42.png"
+            },
+            "awayTeam": {
+                "team_id": 46,
+                "team_name": "Leicester",
+                "logo": "https://www.api-football.com/public/teams/46.png"
+            },
+            "goalsHomeTeam": 2,
+            "goalsAwayTeam": 1,
+            "score": {
+                "halftime": "1-0",
+                "fulltime": "2-1",
+                "extratime": null,
+                "penalty": null
+            }
+        },
+        {
+            "fixture_id": 5,
+            "league_id": 2,
+            "event_date": "2019-08-10T19:00:00+00:00",
+            "event_timestamp": 1533927600,
+            "firstHalfStart": 1533927600,
+            "secondHalfStart": 1533931200,
+            "round": "Regular Season - 1",
+            "status": "Match Finished",
+            "statusShort": "FT",
+            "elapsed": 90,
+            "venue": "Old Trafford (Manchester)",
+            "referee": null,
+            "homeTeam": {
+                "team_id": 33,
+                "team_name": "Manchester United",
+                "logo": "https://www.api-football.com/public/teams/33.png"
+            },
+            "awayTeam": {
+                "team_id": 46,
+                "team_name": "Burnley",
+                "logo": "https://www.api-football.com/public/teams/44.png"
+            },
+            "goalsHomeTeam": 2,
+            "goalsAwayTeam": 1,
+            "score": {
+                "halftime": "1-0",
+                "fulltime": "2-1",
+                "extratime": null,
+                "penalty": null
+            }
+        },
+        {
+            "fixture_id": 6,
+            "league_id": 2,
+            "event_date": "2019-09-10T19:00:00+00:00",
+            "event_timestamp": 1533927600,
+            "firstHalfStart": 1533927600,
+            "secondHalfStart": 1533931200,
+            "round": "Regular Season - 1",
+            "status": "Match Finished",
+            "statusShort": "FT",
+            "elapsed": 90,
+            "venue": "Old Trafford (Manchester)",
+            "referee": null,
+            "homeTeam": {
+                "team_id": 33,
+                "team_name": "Manchester City",
+                "logo": "https://www.api-football.com/public/teams/50.png"
+            },
+            "awayTeam": {
+                "team_id": 46,
+                "team_name": "Leicester",
+                "logo": "https://www.api-football.com/public/teams/46.png"
+            },
+            "goalsHomeTeam": 2,
+            "goalsAwayTeam": 1,
+            "score": {
+                "halftime": "1-0",
+                "fulltime": "2-1",
+                "extratime": null,
+                "penalty": null
+            }
+        }
+    ]
+}

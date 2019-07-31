@@ -1,5 +1,5 @@
 import requestHandler from './helpers/requestHandler';
-import { liveFixturesMockData, oddsMockData } from './mockData';
+import { liveFixturesMockData, oddsMockData, fixturesMockData } from './mockData';
 
 export default class AppService {
     getTeams = () => {
@@ -36,6 +36,11 @@ export default class AppService {
             url: `fixtures/id/${Number(fixtureId)}`,
             method: 'GET'
         })
+    }
+
+    getMockFixture = (fixtureId) => {
+        const data = fixturesMockData.fixtures.filter((f) => f.fixture_id === fixtureId);
+        return new Promise(resolve => setTimeout(() => resolve({fixtures: data}), 1000));
     }
 
     getStandings = () => {
