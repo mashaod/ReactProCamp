@@ -56,7 +56,7 @@ class Odds extends Component {
                 <List>
                     {
                         odds.map(odd => (
-                            <ListItem>
+                            <ListItem key={odd.fixture_id}>
                                 <div className={classes.oddsSection}>
                                     <div className={classes.teams}>
                                         <div className={classes.leftTeam}>

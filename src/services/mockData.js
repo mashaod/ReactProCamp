@@ -591,7 +591,7 @@ export const fixturesMockData = {
         {
             "fixture_id": 1,
             "league_id": 2,
-            "event_date": "2019-04-10T19:00:00+00:00",
+            "event_date": "2019-09-01T19:00:00+00:00",
             "event_timestamp": 1533927600,
             "firstHalfStart": 1533927600,
             "secondHalfStart": 1533931200,
@@ -608,8 +608,8 @@ export const fixturesMockData = {
             },
             "awayTeam": {
                 "team_id": 46,
-                "team_name": "Southampton",
-                "logo": "https://www.api-football.com/public/teams/41.png"
+                "team_name": "Liverpool",
+                "logo": "https://www.api-football.com/public/teams/40.png"
             },
             "goalsHomeTeam": 2,
             "goalsAwayTeam": 1,
@@ -623,7 +623,7 @@ export const fixturesMockData = {
         {
             "fixture_id": 2,
             "league_id": 2,
-            "event_date": "2019-05-10T19:00:00+00:00",
+            "event_date": "2019-09-02T19:00:00+00:00",
             "event_timestamp": 1533927600,
             "firstHalfStart": 1533927600,
             "secondHalfStart": 1533931200,
@@ -655,7 +655,7 @@ export const fixturesMockData = {
         {
             "fixture_id": 3,
             "league_id": 2,
-            "event_date": "2019-06-10T19:00:00+00:00",
+            "event_date": "2019-09-03T19:00:00+00:00",
             "event_timestamp": 1533927600,
             "firstHalfStart": 1533927600,
             "secondHalfStart": 1533931200,
@@ -687,7 +687,7 @@ export const fixturesMockData = {
         {
             "fixture_id": 4,
             "league_id": 2,
-            "event_date": "2019-07-10T19:00:00+00:00",
+            "event_date": "2019-09-04T19:00:00+00:00",
             "event_timestamp": 1533927600,
             "firstHalfStart": 1533927600,
             "secondHalfStart": 1533931200,
@@ -719,7 +719,7 @@ export const fixturesMockData = {
         {
             "fixture_id": 5,
             "league_id": 2,
-            "event_date": "2019-08-10T19:00:00+00:00",
+            "event_date": "2019-09-05T19:00:00+00:00",
             "event_timestamp": 1533927600,
             "firstHalfStart": 1533927600,
             "secondHalfStart": 1533931200,

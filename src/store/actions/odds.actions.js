@@ -45,6 +45,7 @@ const fetchOdds = (appService) => () => (dispatch) => {
                             const awayOdd = winnerBet.values.find(b => b.value === 'Away');
 
                             const data = {
+                                fixture_id: fixture.fixture_id,
                                 event_date: fixture.event_date,
                                 homeTeam: fixture.homeTeam,
                                 awayTeam: fixture.awayTeam,
