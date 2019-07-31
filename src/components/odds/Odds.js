@@ -26,6 +26,16 @@ class Odds extends Component {
         this.props.fetchOdds()
     }
 
+    getDate = (time) => {
+        return  new Intl.DateTimeFormat('en-GB', {
+            year: 'numeric',
+            month: 'long',
+            day: '2-digit',
+            hour: 'numeric',
+            minute: 'numeric'
+        }).format(new Date(time))
+    }
+
     render() {
         const { odds, loading, message, error, classes } = this.props;
 
@@ -43,6 +53,49 @@ class Odds extends Component {
                 >
                     ODDS
                 </Typography>
+                <List>
+                    {
+                        odds.map(odd => (
+                            <ListItem>
+                                <div className={classes.oddsSection}>
+                                    <div className={classes.teams}>
+                                        <div className={classes.leftTeam}>
+                                            <div>
+                                                <ListItemAvatar>
+                                                    <Avatar alt="Remy Sharp" src={odd.homeTeam.logo} className={classes.teamLogo}/>
+                                                </ListItemAvatar>
+                                            </div>
+                                            <div>{odd.homeTeam.team_name}</div>
+                                        </div>
+                                        <div className={classes.odds}>
+                                            <Button size="small" variant="contained" color="primary" className={classes.button}>
+                                                {odd.homeOdd}
+                                            </Button>
+                                            <div>VS</div>
+                                            <Button size="small" variant="contained" color="primary" className={classes.button}>
+                                                {odd.awayOdd}
+                                            </Button>
+                                        </div>
+                                        <div className={classes.rightTeam}>
+                                            <div>{odd.awayTeam.team_name}</div>
+                                                <ListItemAvatar>
+                                                    <Avatar alt="Remy Sharp" src={odd.awayTeam.logo} className={classes.teamLogo}/>
+                                                </ListItemAvatar>
+                                        </div>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <div className={classes.league}>
+                                            Premier League
+                                        </div>
+                                        <div className={classes.timeSection}>
+                                            {this.getDate(odd.event_date)}
+                                        </div>
+                                    </div>
+                                </div>
+                            </ListItem>
+                        ))
+                    }
+                </List>
             </div>
         )
     }

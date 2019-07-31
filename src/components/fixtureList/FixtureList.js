@@ -28,7 +28,7 @@ class FixtureList extends Component {
     state = {
         currentFixture: {},
         isOpenFixtureDialog: false,
-        rowsPerPage: 5,
+        rowsPerPage: 8,
         page: 0
     }
 
